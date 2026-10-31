@@ -1,0 +1,37 @@
+{
+  "name": "judgebox",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "JudgeBox: online judge and contest platform with noise-aware verdicts, complexity-explained TLE feedback and test-suite strength scoring",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:deps": "docker compose -f docker-compose.dev.yml up -d",
+    "dev:deps:down": "docker compose -f docker-compose.dev.yml down",
+    "sandbox:build": "docker build -t judgebox-sandbox ./sandbox",
+    "seed": "node scripts/seed.js",
+    "dev:api": "npm run dev -w apps/api",
+    "dev:worker": "npm run dev -w apps/worker",
+    "dev:web": "npm run dev -w apps/web",
+    "dev": "concurrently -n api,worker,web -c blue,green,magenta \"npm:dev:api\" \"npm:dev:worker\" \"npm:dev:web\"",
+    "test": "node scripts/run-tests.js",
+    "build": "npm run build -w apps/web",
+    "experiment:c1": "node scripts/experiment-c1.js",
+    "setup": "node scripts/setup.js",
+    "doctor": "node scripts/doctor.js",
+    "loadtest": "node scripts/load-test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

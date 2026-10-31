@@ -1,0 +1,15 @@
+{
+  "name": "@judgebox/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./core": "./src/core.js"
+  },
+  "dependencies": {
+    "ioredis": "^5.4.1",
+    "mongoose": "^8.7.0"
+  }
+}

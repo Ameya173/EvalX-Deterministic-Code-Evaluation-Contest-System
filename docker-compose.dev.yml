@@ -1,0 +1,15 @@
+# Development dependencies only (database + queue). The apps run with `npm run dev`.
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports: ["127.0.0.1:27017:27017"]
+    volumes: ["jb_mongo_dev:/data/db"]
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports: ["127.0.0.1:6379:6379"]
+    volumes: ["jb_redis_dev:/data"]
+volumes:
+  jb_mongo_dev:
+  jb_redis_dev:
