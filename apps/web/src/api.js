@@ -1,3 +1,4 @@
+const API_BASE = import.meta.env.VITE_API_URL || '';
 let accessToken = null;
 let sessionHandler = () => {};
 
@@ -18,7 +19,7 @@ async function request(path, { method = 'GET', body, retry = true } = {}) {
   const headers = {};
   if (body !== undefined) headers['Content-Type'] = 'application/json';
   if (accessToken) headers.Authorization = `Bearer ${accessToken}`;
-  const res = await fetch(`/api${path}`, {
+  const res = await fetch(`${API_BASE}/api${path}`, {
     method,
     headers,
     body: body === undefined ? undefined : JSON.stringify(body),

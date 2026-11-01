@@ -1,4 +1,9 @@
-# JudgeBox
+# Eval x
+
+
+npm run dev:deps
+npm run dev
+
 
 An online judge and contest platform (MERN-style stack) with a hardened Docker sandbox and three research contributions:
 

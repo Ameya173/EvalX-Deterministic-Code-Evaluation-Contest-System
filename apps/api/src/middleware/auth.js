@@ -43,8 +43,8 @@ export const requireRole = (...roles) => (req, res, next) =>
 
 export const refreshCookieOptions = () => ({
   httpOnly: true,
-  sameSite: 'lax',
-  secure: config.cookieSecure,
+  sameSite: config.isProd ? 'none' : 'lax',
+  secure: config.isProd ? true : config.cookieSecure,
   path: '/api/auth',
   maxAge: 7 * 24 * 3600 * 1000,
 });
