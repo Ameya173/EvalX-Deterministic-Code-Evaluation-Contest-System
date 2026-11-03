@@ -91,18 +91,18 @@ function diffLabel(d) {
 }
 
 const TOPICS = [
-  { name: 'Arrays', color: '#6366f1', count: '65+' },
-  { name: 'Strings', color: '#8b5cf6', count: '48+' },
-  { name: 'Linked List', color: '#ec4899', count: '32+' },
+  { name: 'Arrays', color: '#8B5CF6', count: '65+' },
+  { name: 'Strings', color: '#06D6F5', count: '48+' },
+  { name: 'Linked List', color: '#D946EF', count: '32+' },
   { name: 'Trees', color: '#22c55e', count: '54+' },
-  { name: 'Graphs', color: '#06b6d4', count: '46+' },
+  { name: 'Graphs', color: '#06D6F5', count: '46+' },
   { name: 'Dynamic Programming', color: '#f59e0b', count: '60+' },
-  { name: 'Binary Search', color: '#3b82f6', count: '38+' },
+  { name: 'Binary Search', color: '#8B5CF6', count: '38+' },
   { name: 'Stacks & Queues', color: '#84cc16', count: '35+' },
   { name: 'Heaps', color: '#f43f5e', count: '28+' },
-  { name: 'Backtracking', color: '#a855f7', count: '24+' },
+  { name: 'Backtracking', color: '#D946EF', count: '24+' },
   { name: 'Greedy', color: '#10b981', count: '30+' },
-  { name: 'Bit Manipulation', color: '#0ea5e9', count: '22+' },
+  { name: 'Bit Manipulation', color: '#06D6F5', count: '22+' },
   { name: 'Math', color: '#f97316', count: '25+' },
 ];
 
@@ -111,14 +111,14 @@ const SHEETS = [
     name: 'Blind 75',
     desc: 'The 75 definitive DSA questions to crack Google, Meta, Amazon, and top tech interviews.',
     count: 75,
-    color: '#6366f1',
+    color: '#8B5CF6',
     badge: 'Essential',
   },
   {
     name: 'NeetCode 150',
     desc: 'Structured 18-topic roadmap covering every high-yield pattern from Two Pointers to DP.',
     count: 150,
-    color: '#8b5cf6',
+    color: '#06D6F5',
     badge: 'Popular',
   },
   {

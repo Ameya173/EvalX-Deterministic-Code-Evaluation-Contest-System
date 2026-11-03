@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useAuth } from './auth.jsx';
 import Navbar from './components/Navbar.jsx';
+import AuthPromptModal from './components/AuthPromptModal.jsx';
 import Landing from './pages/Landing.jsx';
 import Problems from './pages/Problems.jsx';
 import Problem from './pages/Problem.jsx';
@@ -29,16 +30,17 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <AuthPromptModal />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/problems" element={<Problems />} />
         <Route path="/login" element={<Login mode="login" />} />
         <Route path="/register" element={<Login mode="register" />} />
-        <Route path="/problems/:slug" element={<Problem />} />
+        <Route path="/problems/:slug" element={<Guard><Problem /></Guard>} />
         <Route path="/submissions" element={<Guard><Submissions /></Guard>} />
         <Route path="/submissions/:id" element={<Guard><SubmissionDetail /></Guard>} />
         <Route path="/contests" element={<Contests />} />
-        <Route path="/contests/:id" element={<Contest />} />
+        <Route path="/contests/:id" element={<Guard><Contest /></Guard>} />
         <Route path="/study-plan" element={<StudyPlan />} />
         <Route path="/users/:handle" element={<Profile />} />
         <Route path="/manage" element={<Guard role="setter"><Manage /></Guard>} />

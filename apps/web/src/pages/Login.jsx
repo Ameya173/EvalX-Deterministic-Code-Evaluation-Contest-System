@@ -59,6 +59,29 @@ export default function Login({ mode }) {
           </p>
         </div>
 
+        {location.state?.from && (
+          <div
+            style={{
+              background: 'rgba(99, 102, 241, 0.12)',
+              border: '1px solid rgba(99, 102, 241, 0.35)',
+              borderRadius: '10px',
+              padding: '0.8rem 1rem',
+              marginBottom: '1.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.65rem',
+              color: 'var(--text)',
+              fontSize: '0.88rem',
+              textAlign: 'left',
+            }}
+          >
+            <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>🔒</span>
+            <span>
+              <strong>Sign-in required:</strong> Please {isRegister ? 'create an account' : 'sign in'} to open problems, access the code editor, and run submissions.
+            </span>
+          </div>
+        )}
+
         <form onSubmit={submit}>
           {isRegister ? (
             <>
@@ -117,9 +140,9 @@ export default function Login({ mode }) {
 
         <p className="small muted" style={{ textAlign: 'center', marginTop: '1.25rem', marginBottom: 0 }}>
           {isRegister ? (
-            <>Already have an account? <Link to="/login" style={{ fontWeight: 600 }}>Log in</Link></>
+            <>Already have an account? <Link to="/login" state={location.state} style={{ fontWeight: 600 }}>Log in</Link></>
           ) : (
-            <>Don't have an account yet? <Link to="/register" style={{ fontWeight: 600 }}>Sign up</Link></>
+            <>Don't have an account yet? <Link to="/register" state={location.state} style={{ fontWeight: 600 }}>Sign up</Link></>
           )}
         </p>
       </div>
